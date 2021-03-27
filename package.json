@@ -1,8 +1,11 @@
 {
   "name": "vue-app",
   "version": "0.1.0",
+  "description": "vue app project.",
   "private": true,
   "scripts": {
+    "lint-staged": "lint-staged",
+    "lint-commit": "commitlint -E HUSKY_GIT_PARAMS",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
@@ -15,6 +18,8 @@
     "vuex": "^3.4.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
@@ -33,5 +38,12 @@
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
+  },
+  "author": "tcly861204 <tcly861204@hotmail.com>",
+  "husky": {
+    "hooks": {
+      "commit-msg": "npm run lint-commit",
+      "pre-commit": "npm run lint-staged"
+    }
   }
 }
