@@ -1,0 +1,10 @@
+html, body {
+  height: 100%;
+}
+
+html, body, a, h1, div, header, footer, section, main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
